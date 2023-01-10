@@ -1,5 +1,6 @@
 package findelements_programs;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.TreeMap;
 import java.util.TreeSet;
@@ -20,17 +21,21 @@ public class HandleAutoSuggestion {
 		driver.findElement(By.xpath("//input[@name='q']")).sendKeys("virat");
 		List<WebElement> sugg = driver.findElements(By.xpath("//span[contains(.,'virat')]"));
 		TreeSet set = new TreeSet<>();
-		
+
 		for (WebElement lv : sugg) {
 			System.out.println(lv.getText());
 			set.add(lv.getText());
 		}
-		
 		System.out.println(set);
-		
-		
-		for (Object lv : set) {
-			System.out.println(lv);
+
+		String[] str=new String[set.size()];
+		Iterator itr = set.iterator();
+		int i=0;
+		while (itr.hasNext()) {
+			str[i]=(String) itr.next();
+			i++;
 		}
+		
+		System.out.println(str[2]);
 	}
 }

@@ -8,6 +8,6 @@ public class ExcelUtility {
 
 	@Test
 	public void readDataFromEcel() {
-		new FileInputStream(IPathConstants.excelpath);
+//		new FileInputStream(IPathConstants.excelpath);
 	}
 }
